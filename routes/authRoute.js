@@ -23,13 +23,13 @@ const transporter = nodemailer.createTransport({
 router.get('/login/google', passport.authenticate("google", {scope: ["profile", "email"]}))
 
 router.get('/v1/auth/google/callback', passport.authenticate("google", {failureMessage: "cannot login to google", failureRedirect: errorLoginUrl, successRedirect: successLoginUrl}), (req, res)=>{
-    res.status(200).send(req.user)
+    res.status(200)
 })
 
 router.get('/login/facebook', passport.authenticate("facebook", {scope: ["email"]}))
 
 router.get('/v1/auth/facebook/callback', passport.authenticate("facebook", {failureMessage: "cannot login to facebook", failureRedirect: errorLoginUrl, successRedirect: successLoginUrl}), (req, res)=>{
-    res.status(200).send(req.user)
+    res.status(200)
 })
 
 router.get('/v1/google/get/details', async(req, res)=>{
