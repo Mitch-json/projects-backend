@@ -133,7 +133,7 @@ passport.use(new FacebookStrategy({
 ));
 
 passport.serializeUser((user, cb) => {
-    // app.locals.user = user;
+    app.locals.user = user;
     cb(null, user.id);
 });
 

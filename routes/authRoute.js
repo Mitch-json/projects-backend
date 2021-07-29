@@ -33,7 +33,7 @@ router.get('/v1/auth/facebook/callback', passport.authenticate("facebook", {fail
 })
 
 router.get('/v1/google/get/details', async(req, res)=>{
-    // res.status(200).send(req.app.locals.user)
+    res.status(200).send(req.app.locals.user)
 })
 
 router.post('/register', async (req, res)=>{
